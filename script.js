@@ -92,3 +92,17 @@ document.querySelectorAll('.highlight-item').forEach((el, i) => {
 document.querySelectorAll('.amenity-item').forEach((el, i) => {
   el.style.transitionDelay = (i * 0.1) + 's';
 });
+
+/* ── Floating contact visibility (after hero) ── */
+const heroSection = document.getElementById('hero');
+const floatContact = document.getElementById('floatContact');
+
+function toggleFloatContact() {
+  if (!heroSection || !floatContact) return;
+  const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+  floatContact.classList.toggle('show', window.scrollY >= heroBottom - 80);
+}
+
+window.addEventListener('scroll', toggleFloatContact);
+window.addEventListener('resize', toggleFloatContact);
+toggleFloatContact();

@@ -917,10 +917,11 @@ section { padding: 120px 60px; }
 
 .amenities-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  background: transparent;
   max-width: 1300px;
+  margin: 0 auto;
 }
 
 .amenity-item {
@@ -930,6 +931,60 @@ section { padding: 120px 60px; }
   cursor: none;
   position: relative;
   overflow: hidden;
+}
+
+.float-enquiry,
+.mob-bar {
+  display: none !important;
+}
+
+.float-contact {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s var(--transition);
+}
+
+.float-contact.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.float-contact-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s var(--transition), filter 0.25s var(--transition);
+}
+
+.float-contact-btn i {
+  font-size: 16px;
+}
+
+.float-contact-btn.call {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+.float-contact-btn.whatsapp {
+  background: #25D366;
+  color: #0d2515;
+}
+
+.float-contact-btn:hover {
+  transform: translateX(-4px);
+  filter: brightness(1.05);
 }
 
 .amenity-item::before {
@@ -1417,7 +1472,6 @@ section { padding: 120px 60px; }
 ═══════════════════════════════════════════ */
 @media (max-width: 1200px) {
   .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-  .amenities-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 900px) {
@@ -1442,13 +1496,22 @@ section { padding: 120px 60px; }
   .modal-img { display: none; }
   .mob-bar { display: flex; }
   .float-enquiry { bottom: 80px; }
+  .float-contact {
+    right: 12px;
+    top: auto;
+    bottom: 90px;
+    transform: none;
+  }
+  .float-contact-btn {
+    width: 44px;
+    height: 44px;
+  }
   .hero { height: auto; min-height: 100vh; padding-top: 100px; padding-bottom: 80px; }
 }
 
 @media (max-width: 600px) {
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-item:nth-child(4) { grid-column: span 1; }
-  .amenities-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; }
   .btn-primary-gold, .btn-outline-gold { text-align: center; }

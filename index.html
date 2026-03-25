@@ -430,22 +430,13 @@
     </div>
   </footer>
 
-  <div class="float-enquiry">
-    <button class="float-enquiry-btn" onclick="openModal(event)" aria-label="Enquire">
-      <i class="fas fa-envelope"></i>
-    </button>
-  </div>
-
-  <div class="mob-bar">
-    <button class="mob-bar-btn" onclick="openModal(event)">
-      <i class="fas fa-phone"></i> Call Back
-    </button>
-    <button class="mob-bar-btn" onclick="openModal(event)">
-      <i class="fas fa-pen"></i> Enquire
-    </button>
-    <button class="mob-bar-btn" onclick="openModal(event)">
-      <i class="fas fa-download"></i> Brochure
-    </button>
+  <div class="float-contact" id="floatContact">
+    <a href="#" class="float-contact-btn call" onclick="openModal(event)" aria-label="Call">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="#" class="float-contact-btn whatsapp" onclick="openModal(event)" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
   </div>
 
   <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
