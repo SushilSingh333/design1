@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Godrej Aveline — Yelahanka, North Bengaluru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="navbar">
+    <a class="nav-logo" href="#hero">
+      <div class="nav-logo-mark">GA</div>
+      <div class="nav-logo-text">
+        <span>Godrej</span>
+        <span>Aveline</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+    <a href="#" class="nav-cta" onclick="openModal(event)">Enquire Now</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+    <a href="#amenities" onclick="closeMobileMenu()">Amenities</a>
+    <a href="#gallery" onclick="closeMobileMenu()">Gallery</a>
+    <a href="#location" onclick="closeMobileMenu()">Location</a>
+    <a href="#" onclick="closeMobileMenu(); openModal(event)">Enquire Now</a>
+  </div>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-noise"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <span>Dutch-Inspired Luxury Living</span>
+        </div>
+        <h1 class="hero-title">Godrej<br><em>Aveline</em></h1>
+        <p class="hero-location">
+          <i class="fas fa-location-dot"></i>Airport Road, Yelahanka &nbsp;·&nbsp; North Bengaluru
+        </p>
+        <div class="hero-features">
+          <div class="hero-feature"><i class="fas fa-check"></i>Dutch-inspired premium architecture</div>
+          <div class="hero-feature"><i class="fas fa-check"></i>10-acre development · 9 towers · 814 units</div>
+          <div class="hero-feature"><i class="fas fa-check"></i>30,000 sq.ft. Grand Clubhouse</div>
+          <div class="hero-feature"><i class="fas fa-check"></i>EOI Window Open – Pre-Launch Inventory</div>
+        </div>
+        <div class="hero-price-card">
+          <div class="hero-price-bhk">
+            <span class="label">Configuration</span>
+            <span class="value">3 & 4 BHK</span>
+          </div>
+          <div class="hero-price-amt">
+            <span class="label">Starting Price</span>
+            <span class="value">₹ 2.53 Cr*</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary-gold" onclick="openModal(event)">Schedule a Visit</a>
+          <a href="#about" class="btn-outline-gold">Explore Project</a>
+        </div>
+      </div>
+      <div class="hero-form-column">
+        <div class="hero-form-wrap">
+          <form class="luxury-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Your Full Name" required>
+            </div>
+            <div class="form-field">
+              <i class="fas fa-phone"></i>
+              <input type="tel" placeholder="Phone Number" pattern="^\d{10}$" maxlength="10" inputmode="numeric" required>
+            </div>
+            <div class="form-field">
+              <i class="fas fa-city"></i>
+              <input type="text" placeholder="Your City" required>
+            </div>
+            <button type="submit" class="form-submit">Get Callback</button>
+          </form>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-badge">
+            <span class="num">814</span>
+            <span class="lbl">Residences</span>
+          </div>
+          <div class="stat-badge">
+            <span class="num">10<small style="font-size:14px">ac</small></span>
+            <span class="lbl">Premium Development</span>
+          </div>
+          <div class="stat-badge">
+            <span class="num">9</span>
+            <span class="lbl">Towers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Scroll</span>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="about-grid">
+      <div class="about-img-wrapper reveal-left">
+        <div class="about-img-frame"></div>
+        <img src="img/g3.webp" alt="Godrej Aveline Living Space">
+        <div class="about-badge">
+          <span class="big">58+</span>
+          <span class="small">Amenities</span>
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>The Project</span>
+        </div>
+        <h2 class="section-title">About<br><em>Godrej Aveline</em></h2>
+        <p class="about-desc">
+          Godrej Aveline offers premium 3 & 4 BHK residences in the heart of North Bengaluru, crafted with distinctive Dutch-inspired architecture and lush green landscapes. Located on Airport Road, Yelahanka, this landmark development enjoys seamless connectivity to the airport, metro, and major tech hubs.
+        </p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-location-dot"></i></div>
+            <div class="about-feature-text">
+              <h5>Prime North Bengaluru Location</h5>
+              <p>Direct access to NH-44 Bellary Road · 5 mins to Yelahanka Metro · 20 mins to KIA Airport</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-compass-drafting"></i></div>
+            <div class="about-feature-text">
+              <h5>Dutch-Inspired Architecture</h5>
+              <p>Spacious layouts, lush green landscapes & 33,000 sq.ft. retail building within the project</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-award"></i></div>
+            <div class="about-feature-text">
+              <h5>Trusted Developer</h5>
+              <p>Developed by Godrej Properties — India's most trusted real estate developer</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 40px;">
+          <a href="#" class="btn-outline-gold" onclick="openModal(event)">Download Brochure</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-section" id="pricing">
+    <div class="pricing-header reveal">
+      <div class="section-eyebrow" style="justify-content:center">
+        <div class="section-eyebrow-line"></div>
+        <span>Investment</span>
+        <div class="section-eyebrow-line"></div>
+      </div>
+      <h2 class="section-title">Apartment<br><em>Pricing</em></h2>
+      <p>Choose your ideal configuration and invest in a life of unmatched refinement in North Bengaluru.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card featured reveal">
+        <div class="featured-badge">Most Popular</div>
+        <div class="price-tag">Apartment</div>
+        <div class="price-type">3 BHK + 2T</div>
+        <div class="price-divider"></div>
+        <div class="price-size">1,601 Sq. Ft.</div>
+        <div class="price-amount">₹ 2.53 CR*</div>
+        <div class="price-note">Starting Price · Onwards</div>
+        <button class="price-btn" onclick="openModal(event)">Know More</button>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-tag">Apartment</div>
+        <div class="price-type">3 BHK + 3T</div>
+        <div class="price-divider"></div>
+        <div class="price-size">1,907 Sq. Ft.</div>
+        <div class="price-amount">₹ 2.97 CR*</div>
+        <div class="price-note">Starting Price · Onwards</div>
+        <button class="price-btn" onclick="openModal(event)">Know More</button>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-tag">Apartment</div>
+        <div class="price-type">3.5 BHK</div>
+        <div class="price-divider"></div>
+        <div class="price-size">2,138 Sq. Ft.</div>
+        <div class="price-amount">₹ 3.31 CR*</div>
+        <div class="price-note">Starting Price · Onwards</div>
+        <button class="price-btn" onclick="openModal(event)">Know More</button>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-tag">Apartment</div>
+        <div class="price-type">4.5 BHK</div>
+        <div class="price-divider"></div>
+        <div class="price-size">2,514 Sq. Ft.</div>
+        <div class="price-amount">₹ 3.90 CR*</div>
+        <div class="price-note">Starting Price · Onwards</div>
+        <button class="price-btn" onclick="openModal(event)">Know More</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlights-section" id="highlights">
+    <div class="highlights-grid">
+      <div class="highlights-img reveal-left">
+        <img src="/img/2.webp" alt="Godrej Aveline Residences">
+      </div>
+      <div class="reveal-right">
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>Why Aveline</span>
+        </div>
+        <h2 class="section-title" style="margin-bottom: 48px;">Project<br><em>Highlights</em></h2>
+        <div class="highlights-list">
+          <div class="highlight-item">
+            <div class="highlight-num">01</div>
+            <div class="highlight-text"><h4>Dutch-Inspired Premium Architecture & Spacious Layouts</h4></div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-num">02</div>
+            <div class="highlight-text"><h4>10-Acre Premium Development with 9 Towers & 814 Units</h4></div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-num">03</div>
+            <div class="highlight-text"><h4>Rooftop Infinity Swimming Pool & Grand Clubhouse</h4></div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-num">04</div>
+            <div class="highlight-text"><h4>58+ Lifestyle Amenities with Landscaped Greens</h4></div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-num">05</div>
+            <div class="highlight-text"><h4>33,000 Sq.Ft. Retail Building Within the Project</h4></div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-num">06</div>
+            <div class="highlight-text"><h4>Strong Demand from Airport & Tech Hub Professionals</h4></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="amenities-section" id="amenities">
+    <div class="amenities-header reveal">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Lifestyle</span>
+      </div>
+      <h2 class="section-title">World-Class<br><em>Amenities</em></h2>
+      <p>58+ thoughtfully designed lifestyle amenities crafted for comfort, wellness, and elevated living.</p>
+    </div>
+    <div class="amenities-grid reveal">
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fas fa-person-swimming"></i></div>
+        <div class="amenity-name">Rooftop Infinity Pool</div>
+        <div class="amenity-desc">A stunning infinity swimming pool crowning the project with panoramic views of North Bengaluru's skyline.</div>
+        <div class="amenity-stars">★★★★★</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fas fa-champagne-glasses"></i></div>
+        <div class="amenity-name">Grand Clubhouse</div>
+        <div class="amenity-desc">An expansive 30,000 sq.ft. clubhouse designed for leisure, recreation, and premium social gatherings.</div>
+        <div class="amenity-stars">★★★★★</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fas fa-dumbbell"></i></div>
+        <div class="amenity-name">Fitness Center</div>
+        <div class="amenity-desc">Fully equipped gym with advanced machines, open workout areas, and a dedicated wellness environment.</div>
+        <div class="amenity-stars">★★★★★</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fas fa-store"></i></div>
+        <div class="amenity-name">Retail Building</div>
+        <div class="amenity-desc">A 33,000 sq.ft. retail zone within the community, offering everyday conveniences right at your doorstep.</div>
+        <div class="amenity-stars">★★★★★</div>
+      </div>
+    </div>
+    <div style="margin-top: 60px; text-align:center;">
+      <a href="#" class="btn-outline-gold" onclick="openModal(event)">Enquire Now</a>
+    </div>
+  </section>
+
+  <div class="tour-section">
+    <div class="tour-bg"></div>
+    <div class="tour-content reveal">
+      <div class="tour-badge">360° Experience</div>
+      <h2 class="tour-title">Take a Virtual<br>Site Tour</h2>
+      <button class="play-btn" onclick="openModal(event)">
+        <i class="fas fa-play"></i>
+      </button>
+    </div>
+  </div>
+
+  <section class="gallery-section" id="gallery">
+    <div class="gallery-header reveal">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Visuals</span>
+      </div>
+      <h2 class="section-title">Project<br><em>Gallery</em></h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="/img/g5.webp" alt="Living Space">
+        <div class="gallery-overlay"><span>Godrej Aveline</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="/img/g4.webp" alt="Interior">
+        <div class="gallery-overlay"><span>Godrej Aveline</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="/img/g6.jpg" alt="Exterior">
+        <div class="gallery-overlay"><span>Godrej Aveline</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="/img/g2.webp" alt="Pool">
+        <div class="gallery-overlay"><span>Godrej Aveline</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="/img/g1.webp" alt="Bedroom">
+        <div class="gallery-overlay"><span>Godrej Aveline</span></div>
+      </div>
+    </div>
+    <div class="gallery-more-btn">
+      <a href="#" class="btn-outline-gold" onclick="openModal(event)">View All Images</a>
+    </div>
+  </section>
+
+  <section class="location-section" id="location">
+    <div class="location-grid">
+      <div class="reveal-left">
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>Connectivity</span>
+        </div>
+        <h2 class="section-title" style="margin-bottom:40px;">Location<br><em>Advantages</em></h2>
+        <div class="location-advantages">
+          <div class="location-adv">
+            <div class="location-adv-dot"></div>
+            <div class="location-adv-text">Airport Road, Yelahanka – Direct Access to NH-44 Bellary Road</div>
+          </div>
+          <div class="location-adv">
+            <div class="location-adv-dot"></div>
+            <div class="location-adv-text">5 Mins to Bagalur Cross & Yelahanka Metro (Upcoming)</div>
+          </div>
+          <div class="location-adv">
+            <div class="location-adv-dot"></div>
+            <div class="location-adv-text">20 Mins to Kempegowda International Airport</div>
+          </div>
+          <div class="location-adv">
+            <div class="location-adv-dot"></div>
+            <div class="location-adv-text">Close to Amazon Office & Ecopolis Tech Park</div>
+          </div>
+          <div class="location-adv">
+            <div class="location-adv-dot"></div>
+            <div class="location-adv-text">Embassy Business Hub – Major Employment Corridor</div>
+          </div>
+          <div class="location-adv">
+            <div class="location-adv-dot"></div>
+            <div class="location-adv-text">Prime North Bengaluru – High Appreciation Zone</div>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrapper reveal-right">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15543.20012563!2d77.5906!3d13.1007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae194e3bf55b75%3A0x4e3e5ab5e2f5d80a!2sYelahanka%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="developer">
+    <div class="footer-main">
+      <div class="reveal">
+        <div class="footer-brand">
+          <div class="footer-brand-mark">G</div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:16px;letter-spacing:2px;color:var(--white);">GODREJ</div>
+            <div style="font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;">Properties</div>
+          </div>
+        </div>
+        <h3 class="footer-dev-title">About the <em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold)">Developer</em></h3>
+        <p class="footer-dev-text">
+          Godrej Properties brings the Godrej Group's legacy of excellence, trust, and innovation to real estate. Widely recognised as India's most trusted developer, Godrej Properties has consistently delivered landmark residential and commercial projects across India's top cities. Godrej Aveline in North Bengaluru reflects their commitment to quality, design, and future-ready communities.
+        </p>
+        <div class="footer-rera">
+          <span>RERA</span>
+          <span>Registration No. Applied / Coming Soon*</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3 class="footer-form-title">Schedule a <em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold)">Site Visit</em></h3>
+        <form class="luxury-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Your Full Name" required>
+          </div>
+          <div class="form-field">
+            <i class="fas fa-phone"></i>
+            <input type="tel" placeholder="Phone Number" pattern="^\d{10}$" maxlength="10" inputmode="numeric" required>
+          </div>
+          <div class="form-field">
+            <i class="fas fa-city"></i>
+            <input type="text" placeholder="Your City" required>
+          </div>
+          <button type="submit" class="form-submit">Get Callback</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Disclaimer: The content provided on this website is for information purposes only and does not constitute an offer to avail any service. The prices mentioned are subject to change without prior notice, and the availability of properties mentioned is not guaranteed. This is not an official website of Godrej Properties.</p>
+    </div>
+  </footer>
+
+  <div class="float-enquiry">
+    <button class="float-enquiry-btn" onclick="openModal(event)" aria-label="Enquire">
+      <i class="fas fa-envelope"></i>
+    </button>
+  </div>
+
+  <div class="mob-bar">
+    <button class="mob-bar-btn" onclick="openModal(event)">
+      <i class="fas fa-phone"></i> Call Back
+    </button>
+    <button class="mob-bar-btn" onclick="openModal(event)">
+      <i class="fas fa-pen"></i> Enquire
+    </button>
+    <button class="mob-bar-btn" onclick="openModal(event)">
+      <i class="fas fa-download"></i> Brochure
+    </button>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+    <div class="modal-box">
+      <div class="modal-img">
+        <img src="/img/f1.jpg" alt="Godrej Aveline">
+      </div>
+      <div class="modal-form">
+        <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        <h2 class="modal-title">Get In <em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold)">Touch</em></h2>
+        <p class="modal-subtitle">Our team will reach out within 24 hours</p>
+        <form class="luxury-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Your Full Name" required>
+          </div>
+          <div class="form-field">
+            <i class="fas fa-phone"></i>
+            <input type="tel" placeholder="Phone Number" pattern="^\d{10}$" maxlength="10" inputmode="numeric" required>
+          </div>
+          <div class="form-field">
+            <i class="fas fa-city"></i>
+            <input type="text" placeholder="Your City" required>
+          </div>
+          <button type="submit" class="form-submit">Submit Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
