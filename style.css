@@ -275,7 +275,7 @@ nav.scrolled {
   inset: 0;
   background:
     linear-gradient(135deg, rgba(14, 14, 14, 0.92) 40%, rgba(50, 120, 80, 0.08) 100%),
-    url('/img/1.webp') center/cover no-repeat;
+    url('img/1.webp') center/cover no-repeat;
 }
 
 .hero-bg::after {
@@ -738,7 +738,7 @@ section { padding: 120px 60px; }
 
 .price-card {
   background: var(--surface2);
-  border: 1px solid var(--border);
+  border: 1px solid var(--gold-dark);
   padding: 40px 28px;
   position: relative;
   transition: all 0.4s var(--transition);
